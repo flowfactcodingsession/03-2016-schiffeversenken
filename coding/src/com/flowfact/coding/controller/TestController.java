@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TestController {
 
-	@RequestMapping(name = "dummy", method = RequestMethod.GET)
-	public ResponseEntity<String> printDummy() {
+	@RequestMapping(value = "/dummy", method = RequestMethod.GET)
+	public ResponseEntity<String> printDummy(int zahl) {
+		System.out.println(zahl);
 		String testResponse = "Der Test war erfolgreich";
 		return new ResponseEntity<String>(testResponse, HttpStatus.OK);
 	}
